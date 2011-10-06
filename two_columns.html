@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>2 Column Fluid Layout</title>
+  <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+  <script>
+    $(window.document).ready(function () {
+
+      $('#left li.heading').click(function (e) {
+
+        // This is pretty cool: select elements and toggle them up/down, in one line
+        $(this).nextUntil('li.heading')['slide' + ((this.isClosed = !this.isClosed) ? 'Up' : 'Down')]('fast');
+
+      });
+
+    });
+  </script>
+  <style>
+
+    div, ul, li, p, body { padding: 0; margin: 0; border: 0; }
+
+    #header { color: white; background: #029; font-size: 2em; font-weight: bold; line-height: 50px; padding: 10px 30px; }
+
+    #right_container { background: #08d; float: left; overflow: hidden; position: relative; width: 100%; }
+
+    #left_container { background: blue; float: left; position: relative; right: 80%; width: 100%; }
+
+    #left { float: left; left: 80%; overflow: hidden; position: relative; width: 20%; }
+
+    #right { float: left; left: 82%; overflow: hidden; padding: 1% 0; position: relative; width: 76%; }
+
+    #right p { margin-bottom: 1em; }
+
+    #left li { list-style: none; padding: 5px; }
+
+    #left li.heading { cursor: pointer; background: navy; border: 1px solid black; color: white; font-weight: bold; }
+
+    #left li.odd { background: #00d; }
+
+    #footer { clear: both; color: gray; font-size: 0.9em; padding: 10px; text-align: center; }
+
+  </style>
+</head>
+<body>
+	<div id="container">
+
+    <div id="header">Website Header</div>
+
+    <div id="right_container">
+
+      <div id="left_container">
+
+        <ul id="left">
+
+          <li class="heading">Menu 1</li>
+          <li>Link 1</li>
+          <li class="odd">Link 2</li>
+          <li>Link 3</li>
+          <li class="odd">Link 4</li>
+          <li>Link 5</li>
+
+          <li class="heading">Menu 2</li>
+          <li>Link 1</li>
+          <li class="odd">Link 2</li>
+          <li>Link 3</li>
+          <li class="odd">Link 4</li>
+          <li>Link 5</li>
+
+          <li class="heading">Menu 3</li>
+          <li>Link 1</li>
+          <li class="odd">Link 2</li>
+          <li>Link 3</li>
+          <li class="odd">Link 4</li>
+          <li>Link 5</li>
+
+        </ul>
+
+        <div id="right">
+
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit placerat ultricies. Nunc euismod luctus dictum. Aliquam massa dolor, blandit sed ornare rutrum, suscipit ut nibh. Donec convallis sollicitudin mauris, et feugiat ligula bibendum quis. Nunc at felis lacus. Quisque lacus dui, rhoncus eget vehicula feugiat, fringilla nec leo. Donec vitae commodo nisi. Etiam risus urna, accumsan vitae varius ac, lacinia quis massa. Donec non purus eu augue luctus gravida. Nunc pretium hendrerit odio, non varius neque suscipit a. Aenean non ipsum ac tortor ultrices gravida. Aenean elementum varius libero, eget malesuada sapien mollis a. Proin hendrerit ipsum vel ipsum faucibus posuere. Sed molestie fermentum consectetur. Quisque facilisis laoreet odio, cursus tristique erat dignissim non. Mauris sed sapien tincidunt lectus pellentesque accumsan.
+          </p>
+          <p>
+          Donec elit arcu, pharetra sit amet condimentum sed, molestie vel arcu. Nunc sed magna eget mi imperdiet sodales sit amet nec diam. Fusce euismod lectus tempus sapien ornare adipiscing. Cras ut lacus at augue rutrum luctus vitae id lacus. Pellentesque ac aliquet est. Morbi vulputate accumsan tincidunt. Aenean et elit ut libero molestie faucibus ut vel magna. Etiam scelerisque ante a metus commodo bibendum. Mauris consectetur consequat auctor. Suspendisse ullamcorper, mi eu vehicula vestibulum, tellus elit feugiat tortor, non porta dolor dui at dolor. Phasellus vel ligula tortor. Ut in lacinia metus. Suspendisse sodales arcu sit amet turpis sodales ornare.
+          </p>
+          
+          <p>
+          Mauris ultrices tristique luctus. Vestibulum viverra tellus a ligula ultricies in porta velit ultrices. Nunc sollicitudin fermentum est vel adipiscing. Cras commodo, tortor et pulvinar hendrerit, mauris turpis porttitor quam, ut luctus elit enim id ligula. Nunc erat magna, consectetur ac scelerisque eu, venenatis vitae velit. Aliquam et interdum nulla. Vivamus vitae magna justo, nec vestibulum erat. Mauris consectetur enim quis elit pulvinar placerat. Curabitur hendrerit volutpat massa eu commodo. Vestibulum adipiscing accumsan odio ut ultricies. Maecenas vestibulum, augue quis pulvinar suscipit, diam libero aliquet mauris, tincidunt fringilla augue sapien sed velit.
+          </p>
+          <p>
+          Nulla ut enim eget mauris aliquet auctor non id est. Praesent eu enim lorem. Mauris eu velit et libero varius congue vel in libero. Praesent tellus velit, aliquam egestas molestie sit amet, bibendum eget elit. Morbi ut ipsum ipsum. Sed dignissim orci non mi blandit quis euismod lectus fringilla. Ut a nibh enim. In eu velit nulla. Nullam id libero risus, non consectetur lacus.
+          </p>
+          <p>
+          Donec et dui eros, vitae ultricies quam. Curabitur ac orci in magna bibendum fermentum quis quis sem. Phasellus sollicitudin felis et ligula venenatis eget semper nulla aliquam. Ut lacinia pharetra accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam quam massa, commodo sit amet interdum ut, dapibus ac elit. Etiam consectetur pharetra ornare. Morbi vitae tempor arcu. Pellentesque eget urna dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+          </p>
+          <p>
+          Mauris sodales, elit et posuere lobortis, augue nulla tincidunt ipsum, quis dapibus justo lorem at odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque ante vitae dui malesuada eleifend. Pellentesque at fringilla tellus. Cras vitae metus quis dolor iaculis imperdiet eget a augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consequat pellentesque nibh vitae ultrices.
+          </p>
+          <p>
+          Pellentesque eros lorem, posuere ornare imperdiet eget, tempor sit amet lorem. Nullam arcu massa, posuere fermentum auctor sed, placerat quis ipsum. Aliquam ultricies purus eget sem eleifend quis ultrices lorem dignissim. Praesent tristique porta luctus. Mauris nec mi mi, sed vehicula nisl. Proin id pretium risus. Sed aliquet sapien eu eros posuere fermentum. Maecenas iaculis risus vel felis gravida convallis. Sed porttitor, purus eu scelerisque dictum, leo est placerat tellus, a vulputate magna tortor id justo.
+          </p>
+          <p>
+          Ut turpis neque, aliquam nec tempus ut, eleifend vitae sapien. Sed eget nunc felis, a porttitor urna. Sed a ipsum sed diam imperdiet venenatis. Nullam vel gravida purus. Sed id libero non purus ornare dictum. Pellentesque elit ipsum, tincidunt volutpat consequat quis, molestie eu eros. Etiam suscipit condimentum dictum. Aliquam sit amet tellus tortor, id tincidunt lorem. Aliquam congue aliquam bibendum. Vestibulum fringilla ultricies tellus, ut faucibus mi suscipit sit amet. Cras placerat ligula eu libero dictum blandit.
+          
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="footer">Website Footer</div>
+
+  </div>
+</body>
+</html>
