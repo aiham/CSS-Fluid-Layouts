@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Fluid Form</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script>
+    $(window.document).ready(function () {
+
+      var coloured = false,
+        form = $('form'),
+        rows = $('div.row'),
+        left_col = $('div.left'),
+        right_col = $('div.right');
+
+      $('a#colour').click(function (e) {
+
+        e.preventDefault();
+
+        form.css('background', coloured ? 'white' : '#FF9999');
+        rows.css('background', coloured ? 'white' : '#3399FF');
+        left_col.css('background', coloured ? 'white' : '#66CC33');
+        right_col.css('background', coloured ? 'white' : '#006633');
+
+        coloured = !coloured;
+
+      });
+
+    });
+  </script>
+  <style>
+
+    body, input, textarea { font-family: sans-serif; }
+
+    form { display: block; overflow: auto; padding: 10px; width: 700px; }
+
+    div.row { clear: both; float: left; margin-bottom: 2em;  width: 100%; }
+
+    div.left { float: left; font-size: 1.2em; line-height: 2em; margin-left: 2%; margin-top: 0.4em; text-align: right; width: 27%; }
+
+    div.right { float: right; margin-right: 2%; text-align: center; width: 67%; }
+
+    div.right input, div.right textarea { font-size: 1.2em; padding: 0.3em; width: 95%; }
+
+    div.right input { height: 2em; }
+
+    div.right input[type="submit"] { width: 99%; }
+
+    div.right textarea { height: 10em; }
+
+  </style>
+</head>
+<body>
+  <p><a href="#" id="colour">Toggle Colour</a></p>
+
+	<form>
+
+    <div class="row">
+      <div class="left"><label for="name">Name</label></div>
+      <div class="right"><input type="text" name="name" id="name" /></div>
+    </div>
+
+    <div class="row">
+      <div class="left"><label for="email">Email</label></div>
+      <div class="right"><input type="text" name="email" id="email" /></div>
+    </div>
+
+    <div class="row">
+      <div class="left"><label for="comment">Comment</label></div>
+      <div class="right"><textarea name="comment" id="comment"></textarea></div>
+    </div>
+
+    <div class="row">
+      <div class="right"><input type="submit" value="Submit"></div>
+    </div>
+
+  </form>
+</body>
+</html>
